@@ -8,6 +8,7 @@ import Footer from "./components/sections/footer";
 import Experience from "./components/sections/experience";
 import Contact from "./components/sections/contact";
 import Home from "./pages/home";
+import "./styles/styles.css";
 function App() {
   return (
     <>
