@@ -43,24 +43,24 @@ const projects = [
   {
     title: "Note Taking Web app",
     description:
-      "A blogging platform for knowledge sharing. Features include user authentication, content creation, and comment systems.",
+      "A web app that help individual to take notes add to the database ,edit and delete his notes",
     images: [
-      "debbal_tech_gazette__post.jpg",
-      "debbal_tech_gazette_admin_dashboard.jpg",
-      "debbal_tech_gazette_home.jpg",
-      "debbal_tech_gazette_profile.jpg",
+      "note_taking_home.jpg",
+      "note_taking_login.jpg",
+      "note_taking_edit_notes.jpg",
+      "note_taking_add_notes.jpg",
     ], // Update with actual screenshots
     github: "https://github.com/Kuma-Leta/note_taking_web_app",
   },
   {
     title: "Ethio Agri Farming system",
     description:
-      "A blogging platform for knowledge sharing. Features include user authentication, content creation, and comment systems.",
+      "an Innovative project to help farmers get the knowledge on farming such as whether updates ,advisory services from the advisors with local language translation",
     images: [
       "ethio_agri_home.jpg",
       "ethio_agri_login.jpg",
       "ethio_agri_landing_page.jpg",
-      "debbal_tech_gazette_profile.jpg",
+      "ethio_agri_register.jpg",
     ], // Update with actual screenshots
     github: "https://github.com/Kuma-Leta/Ethio-Agri-farming-system",
   },

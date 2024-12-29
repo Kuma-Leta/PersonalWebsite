@@ -20,7 +20,7 @@ const skills = {
   tools: [
     { name: "Git", logo: "/git.png" },
     { name: "GitHub", logo: "/github.png" },
-    { name: "Agile", logo: "/agile.png" },
+    { name: "Agile", logo: "/agile.jpg" },
   ],
 };
 
@@ -30,16 +30,16 @@ const Skills = () => {
   }, []);
 
   return (
-    <section className="bg-gray-100 dark:bg-dark py-12">
+    <section className="bg-gray-100 dark:bg-gray-900 dark:text-white py-12">
       <div className="container mx-auto px-4">
         <h2
-          className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-black-100"
+          className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-white"
           data-aos="fade-up"
         >
           Technologies & Tools I Work With
         </h2>
         <p
-          className="text-center text-gray-600 dark:text-black-300 mb-12"
+          className="text-center text-gray-600 dark:text-black-300 mb-12 dark:text-white"
           data-aos="fade-up"
         >
           Here are the technologies and tools I use to build scalable,
