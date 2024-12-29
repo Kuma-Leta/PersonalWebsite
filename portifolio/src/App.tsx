@@ -9,6 +9,7 @@ import Experience from "./components/sections/experience";
 import Contact from "./components/sections/contact";
 import Home from "./pages/home";
 import "./styles/styles.css";
+import Testimonials from "./components/sections/testimonials";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/hero" element={<Hero />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
