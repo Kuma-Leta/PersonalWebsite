@@ -107,7 +107,7 @@ const Projects: React.FC = () => {
             <div
               key={index}
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
-              data-aos="fade-in"
+              data-aos="slide-up"
             >
               <div className="relative">
                 <img

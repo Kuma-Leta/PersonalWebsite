@@ -5,14 +5,13 @@ import { Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import { useEffect } from "react";
 import AOS from "aos";
-// For Pagination module
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "Senior Developer",
-    company: "TechCorp",
-    photo: "/myPhoto.png",
+    name: "Tokkumma Abdisa",
+    role: "Top rated full stack developer",
+    company: "Fiverr",
+    photo: "/tokkumma.jpg",
     text: "Kuma is an exceptional developer who brings passion and innovation to every project. His dedication and skill set make him a valuable asset to any team.",
   },
   {
@@ -30,19 +29,13 @@ const testimonials = [
     text: "Kuma consistently delivers high-quality work. His ability to solve problems and create scalable solutions is impressive.",
   },
   {
-    name: "Lisa Wong",
-    role: "Team Lead",
-    company: "DevWorks",
-    photo: "/lisa.jpg",
+    name: "Mikiyas Girma",
+    role: "Full-stack Developer ",
+    company: "OHH company",
+    photo: "/mikias.jpg",
     text: "Kuma is not just a great developer but also a fantastic team player. His collaborative spirit and technical expertise are outstanding.",
   },
-  {
-    name: "Tom Brown",
-    role: "Software Engineer",
-    company: "CodeCraft",
-    photo: "/tom.jpg",
-    text: "Kuma’s dedication and skill level set him apart. He has a knack for understanding complex requirements and delivering elegant solutions.",
-  },
+
   // Add more testimonials here...
 ];
 
@@ -52,7 +45,7 @@ const Testimonials: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-light dark:bg-gray-900 dark:text-white py-12">
+    <section className="bg-gray-100 dark:bg-gray-900 dark:text-white  py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6 text-center" data-aos="fade-up">
           Testimonials

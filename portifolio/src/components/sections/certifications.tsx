@@ -60,16 +60,16 @@ const Certifications: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-light dark:bg-dark py-12">
+    <section className="bg-gray-100 dark:bg-gray-900 py-12">
       <div className="container mx-auto px-4">
         <h2
-          className="text-3xl font-bold mb-6 text-center text-dark dark:text-light"
+          className="text-3xl font-bold mb-6 text-center text-lg text-gray-700 dark:text-gray-300"
           data-aos="fade-up"
         >
           Certifications
         </h2>
         <p
-          className="text-center text-gray-600 dark:text-gray-300 mb-12"
+          className="text-center  text-gray-700 dark:text-gray-300 mb-12"
           data-aos="fade-up"
         >
           Here are some of the certifications I’ve earned to strengthen my

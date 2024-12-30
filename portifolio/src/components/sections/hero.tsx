@@ -35,14 +35,14 @@ const Hero: React.FC = () => {
           {/* Social Icons */}
           <div className="mt-8 flex justify-center lg:justify-start space-x-4">
             <a
-              href="https://github.com"
+              href="https://github.com/Kuma-Leta"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="fab fa-github text-2xl text-gray-900 dark:text-white"></i>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/kumaleta"
               target="_blank"
               rel="noopener noreferrer"
             >
