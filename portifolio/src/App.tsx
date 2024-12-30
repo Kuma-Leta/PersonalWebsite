@@ -10,6 +10,7 @@ import Contact from "./components/sections/contact";
 import Home from "./pages/home";
 import "./styles/styles.css";
 import Testimonials from "./components/sections/testimonials";
+import Certifications from "./components/sections/certifications";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="/certifications" element={<Certifications />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
