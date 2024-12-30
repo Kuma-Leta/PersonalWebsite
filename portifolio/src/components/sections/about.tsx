@@ -16,27 +16,21 @@ const About: React.FC = () => {
             About Me
           </h2>
           <p className="mt-4 text-gray-700 text-justify dark:text-gray-300">
-            Hello! I’m Kuma Leta Keba, a passionate software engineering student
-            at Jimma University with a strong foundation in full-stack web
-            development. With over two years of experience through internships
-            and personal projects, I specialize in creating efficient, scalable
-            applications and user-friendly interfaces.
+            Hello! I’m Kuma Leta Keba, a passionate software engineering with a
+            strong foundation in full-stack web development. With over 3 years
+            of experience through internships and personal projects, I
+            specialize in creating efficient, scalable web applications and
+            user-friendly interfaces.
           </p>
           <p className="mt-4 text-gray-700 text-justify dark:text-gray-300">
             My journey in technology began with a curiosity to understand how
             systems work and a desire to solve real-world problems. Over the
             years, I’ve worked on diverse projects, from developing web
-            applications to contributing to innovative solutions like Smart
-            Farming Assistant Systems, social media websites, and blog
-            platforms. These experiences have shaped me into a professional who
-            thrives in dynamic and challenging environments.
+            applications to contributing to innovative solutions . These
+            experiences have shaped me into a professional who thrives in
+            dynamic and challenging environments.
           </p>
-          <p className="mt-4  text-gray-700 text-justify dark:text-gray-300 ">
-            I believe in limitless growth and strive to align my actions with
-            integrity, professionalism, and a commitment to helping others. My
-            principles guide me to make decisions that are right, even when they
-            challenge me emotionally.
-          </p>
+
           <a
             href="#contact"
             className="mt-6 inline-block px-6 py-3 bg-blue-500 text-white rounded-lg  text-center justify-center shadow-lg hover:bg-blue-600 transition"
@@ -46,7 +40,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Right Column - Image */}
-        <div className="lg:w-1/2 flex justify-center" data-aos="slide-left">
+        <div className="lg:w-1/2 flex justify-center" data-aos="slide-up">
           <img
             src={"/developer.png"}
             alt="Kuma Leta"
