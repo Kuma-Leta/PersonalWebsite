@@ -30,7 +30,10 @@ const Skills = () => {
   }, []);
 
   return (
-    <section className="bg-gray-100 dark:bg-gray-900 dark:text-white py-12">
+    <section
+      id="skills"
+      className="bg-gray-100 dark:bg-gray-900 dark:text-white py-12"
+    >
       <div className="container mx-auto px-4">
         <h2
           className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-white"

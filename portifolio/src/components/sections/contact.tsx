@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Contact: React.FC = () => {
+  const user_id = import.meta.env.user_id;
+  const service_id = import.meta.env.service_id;
+  const template_id = import.meta.env.template_id;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -18,16 +23,41 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // EmailJS or form submission logic here
-    // Simulating success
-    setSuccess(true);
-    setTimeout(() => setSuccess(false), 5000);
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        service_id, // Replace with your EmailJS Service ID
+        template_id, // Replace with your EmailJS Template ID
+        templateParams,
+        user_id // Replace with your EmailJS User ID
+      );
+
+      setSuccess(true);
+      setError(false);
+      setFormData({ name: "", email: "", message: "" }); // Clear form
+    } catch (err) {
+      setError(true);
+      setSuccess(false);
+      console.error("Failed to send email:", err);
+    }
+
+    setTimeout(() => {
+      setSuccess(false);
+      setError(false);
+    }, 5000);
   };
 
   return (
-    <section className="bg-gray-100 dark:bg-dark py-12">
+    <section className="bg-gray-100 dark:bg-gray-900 py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-center">Contact Me</h2>
+        <h2 className="text-3xl font-bold mb-6 dark:text-white text-center">
+          Contact Me
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Form */}
           <div className="col-span-2">
@@ -88,7 +118,7 @@ const Contact: React.FC = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-2 rounded hover:bg-primary-dark"
+                className="py-3 px-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition"
               >
                 Send Message
               </button>
@@ -97,21 +127,26 @@ const Contact: React.FC = () => {
                   Your message has been sent successfully!
                 </p>
               )}
+              {error && (
+                <p className="text-red-500 mt-4">
+                  There was an issue sending your message. Please try again.
+                </p>
+              )}
             </form>
           </div>
 
           {/* Contact Details */}
           <div className="flex flex-col justify-center items-center text-center">
             <div className="mb-6">
-              <i className="fas fa-envelope text-primary text-2xl mb-2"></i>
+              <i className="fas fa-envelope dark:text-white text-primary text-2xl mb-2"></i>
               <p className="text-gray-700 dark:text-gray-300">
                 kumaleta2021@gmail.com
               </p>
             </div>
             <div className="mb-6">
-              <i className="fas fa-map-marker-alt text-primary text-2xl mb-2"></i>
+              <i className="fas fa-map-marker-alt dark:text-white text-primary text-2xl mb-2"></i>
               <p className="text-gray-700 dark:text-gray-300">
-                jimma, Ethiopia
+                Jimma, Ethiopia
               </p>
             </div>
             <div className="flex space-x-4">
@@ -119,10 +154,10 @@ const Contact: React.FC = () => {
                 href="https://linkedin.com/in/kumaleta"
                 className="text-primary text-2xl"
               >
-                <i className="fab fa-linkedin"></i>
+                <i className="fab fa-linkedin dark:text-white"></i>
               </a>
               <a href="https://t.me/khky1" className="text-primary text-2xl">
-                <i className="fab fa-telegram"></i>
+                <i className="fab fa-telegram dark:text-white"></i>
               </a>
             </div>
           </div>

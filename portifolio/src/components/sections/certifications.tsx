@@ -3,54 +3,53 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import { useEffect } from "react";
 
-// Certification data with image and link
 const certifications = [
   {
     title: "Node And Express Essentials",
     organization: "IBM",
     description:
       "Completed a comprehensive curriculum covering  back-end development.",
-    image: "/coursera.jpg", // Certification image
-    link: "https://www.coursera.org/account/accomplishments/verify/H42BBN2YXVTM", // Handle for credential verification
+    image: "/coursera.jpg",
+    link: "https://www.coursera.org/account/accomplishments/verify/H42BBN2YXVTM",
   },
   {
     title: "Programming Fundamentals",
     organization: "Udacity",
     description: "Learned programming fundamentals in web programming.",
-    image: "/programming fundamentals.jpg", // Certification image
-    link: "https://www.udacity.com/certificate/e/76503924-7750-11ef-bb7f-e3161a8aa99d", // Handle for credential verification
+    image: "/programming fundamentals.jpg",
+    link: "https://www.udacity.com/certificate/e/76503924-7750-11ef-bb7f-e3161a8aa99d",
   },
   {
     title: "ALX Virtual Assistant",
     organization: "ALX",
     description:
       "Mastered main services of virtual assistance such as calendar management ,email inbox management,web research.",
-    image: "/VA_certificate.png", // Certification image
-    link: "https://intranet.alxswe.com/certificates/xXMGf7zmSN", // Handle for credential verification
+    image: "/VA_certificate.png",
+    link: "https://intranet.alxswe.com/certificates/xXMGf7zmSN",
   },
   {
     title: "ALX Proffessional Foundation",
     organization: "ALX",
     description:
       "Gained a solid foundation in JavaScript, including ES6, algorithms, and data structures.",
-    image: "/proffesional_foundation.png", // Certification image
-    link: "https://intranet.alxswe.com/certificates/Nz2ZBFPCmJ", // Handle for credential verification
+    image: "/proffesional_foundation.png",
+    link: "https://intranet.alxswe.com/certificates/Nz2ZBFPCmJ",
   },
 
   {
     title: "ALX AI career Essentials",
     organization: "ALX",
     description: "Deep dived into Artificial Intelligence.",
-    image: "/AICE.png", // Certification image
-    link: "https://intranet.alxswe.com/certificates/FXr6yBspMJ", // Handle for credential verification
+    image: "/AICE.png",
+    link: "https://intranet.alxswe.com/certificates/FXr6yBspMJ",
   },
   {
-    title: "Node.js & Express",
-    organization: "Udemy",
+    title: "Internship completion",
+    organization: "Dabbal Software Development PLC",
     description:
       "Deep dive into backend development using Node.js, Express, and MongoDB for full-stack applications.",
-    image: "/internship.png", // Certification image
-    link: "https://www.udemy.com/certificate/your-profile", // Handle for credential verification
+    image: "/internship.png",
+    link: "https://www.udemy.com/certificate/your-profile",
   },
 ];
 
@@ -88,7 +87,7 @@ const Certifications: React.FC = () => {
                 alt={cert.title}
                 className="w-full h-40 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-xl font-semibold text-dark dark:text-light mb-2">
+              <h3 className="text-xl font-semibold text-dark dark:text-white mb-2">
                 {cert.title}
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
