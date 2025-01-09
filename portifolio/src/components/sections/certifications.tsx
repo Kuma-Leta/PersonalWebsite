@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import { useEffect } from "react";
 
 const certifications = [
   {
@@ -35,7 +34,6 @@ const certifications = [
     image: "/proffesional_foundation.png",
     link: "https://intranet.alxswe.com/certificates/Nz2ZBFPCmJ",
   },
-
   {
     title: "ALX AI career Essentials",
     organization: "ALX",
@@ -51,12 +49,38 @@ const certifications = [
     image: "/internship.png",
     link: "https://www.udemy.com/certificate/your-profile",
   },
+  {
+    title:
+      "Seamless Integration :Merging Emerging Tecnhnologies With E-commerce",
+    organization:
+      "Jimma University ,Jimma University AI Centre,mastercard foundation ,ministry of Innovation and Technology ,Iceaddis",
+    description:
+      "Deep dive into Realworld problem solving took a part and made beautiful participation.",
+    image: "/hackaton.jpg",
+    link: "https://www.udemy.com/certificate/your-profile",
+  },
 ];
-
+interface Certificate {
+  title: string;
+  image: string;
+  link: string;
+  description: string;
+  organization: string;
+}
 const Certifications: React.FC = () => {
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  const openModal = (cert: Certificate) => {
+    setSelectedCert(cert);
+  };
+
+  const closeModal = () => {
+    setSelectedCert(null);
+  };
 
   return (
     <section className="bg-gray-100 dark:bg-gray-900 py-12">
@@ -68,7 +92,7 @@ const Certifications: React.FC = () => {
           Certifications
         </h2>
         <p
-          className="text-center  text-gray-700 dark:text-gray-300 mb-12"
+          className="text-center font-serif text-gray-700 dark:text-gray-300 mb-12"
           data-aos="fade-up"
         >
           Here are some of the certifications I’ve earned to strengthen my
@@ -78,9 +102,10 @@ const Certifications: React.FC = () => {
           {certifications.map((cert, idx) => (
             <div
               key={idx}
-              className="card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6"
+              className="card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 cursor-pointer"
               data-aos="slide-up"
               data-aos-delay={idx * 100}
+              onClick={() => openModal(cert)}
             >
               <img
                 src={cert.image}
@@ -93,21 +118,49 @@ const Certifications: React.FC = () => {
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
                 {cert.organization}
               </p>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-base font-serif text-gray-700 dark:text-gray-300 mb-4">
                 {cert.description}
               </p>
-              <a
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400 hover:underline"
-              >
-                Verify Credential
-              </a>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      {selectedCert && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-11/12 md:w-1/2">
+            <button
+              className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 float-right"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+            <img
+              src={selectedCert.image}
+              alt={selectedCert.title}
+              className="w-full h-60 object-cover rounded-lg mb-4"
+            />
+            <h3 className="text-xl font-semibold text-dark dark:text-white mb-2">
+              {selectedCert.title}
+            </h3>
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
+              {selectedCert.organization}
+            </p>
+            <p className="text-base font-serif text-gray-700 dark:text-gray-300 mb-4">
+              {selectedCert.description}
+            </p>
+            <a
+              href={selectedCert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              Verify Credential
+            </a>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
