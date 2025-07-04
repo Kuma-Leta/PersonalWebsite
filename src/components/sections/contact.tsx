@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Contact: React.FC = () => {
-  const user_id = import.meta.env.VITE_USER_ID;
+  const publicKey = import.meta.env.VITE_PUBLIC_KEY; // Use the public key for EmailJS
   const service_id = import.meta.env.VITE_SERVICE_ID;
   const template_id = import.meta.env.VITE_TEMPLATE_ID;
-  console.log(user_id);
+  console.log(publicKey);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
         service_id, // Replace with your EmailJS Service ID
         template_id, // Replace with your EmailJS Template ID
         templateParams,
-        user_id // Replace with your EmailJS User ID
+        publicKey // Replace with your EmailJS User ID
       );
 
       setSuccess(true);
@@ -148,7 +148,7 @@ const Contact: React.FC = () => {
             <div className="mb-6">
               <i className="fas fa-map-marker-alt dark:text-white text-primary text-2xl mb-2"></i>
               <p className="text-gray-700 dark:text-gray-300">
-                Jimma, Ethiopia
+                Addis Ababa, Ethiopia
               </p>
             </div>
             <div className="flex space-x-4">
@@ -158,7 +158,10 @@ const Contact: React.FC = () => {
               >
                 <i className="fab fa-linkedin dark:text-white"></i>
               </a>
-              <a href="https://t.me/khky1" className="text-primary text-2xl">
+              <a
+                href="https://t.me/Kuma_Leta"
+                className="text-primary text-2xl"
+              >
                 <i className="fab fa-telegram dark:text-white"></i>
               </a>
             </div>

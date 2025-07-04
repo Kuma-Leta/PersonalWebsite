@@ -14,6 +14,7 @@ const projects = [
       "debbal_tech_gazette_profile.jpg",
     ],
     github: "https://github.com/Kuma-Leta/Blog-Post",
+    demo: "https://dabbal-tech-gazette.vercel.app/",
   },
   {
     title: "Social Media Website",

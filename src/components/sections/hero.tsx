@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
           </p>
           <div className="mt-6 space-y-4 lg:space-y-0 lg:space-x-4">
             <a
-              href={"/Kuma Leta-CV-Resume.pdf"}
+              href={"/Kuma_Leta_FullStack_Developer.pdf"}
               className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition"
             >
               Download My Resume

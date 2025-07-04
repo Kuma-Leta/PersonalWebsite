@@ -31,7 +31,7 @@ const testimonials = [
   {
     name: "Firaol Tesfaye",
     role: "UI-UX Designer and Mobile App Developer ",
-    company: "OHH company",
+    company: "O company",
     photo: "/firaol-T.jpg",
     text: "Kuma is not just a great developer but also a fantastic team player. His collaborative spirit and technical expertise are outstanding.",
   },
