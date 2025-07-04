@@ -4,6 +4,19 @@ import Aos from "aos";
 import { useState } from "react";
 const projects = [
   {
+    title: "online Donation Platform through NGOs",
+    description:
+      "Blogging platform with user authentication, content creation, and commenting features.",
+    images: [
+      "donation1.jpg",
+      "donation2.jpg",
+      "donation3.jpg",
+      "donation4.jpg",
+    ],
+    github: "https://github.com/Kuma-Leta/Blog-Post",
+    demo: "https://donate-link.netlify.app/",
+  },
+  {
     title: "Dabbal Tech Gazette",
     description:
       "Blogging platform with user authentication, content creation, and commenting features.",
@@ -14,8 +27,8 @@ const projects = [
       "debbal_tech_gazette_profile.jpg",
     ],
     github: "https://github.com/Kuma-Leta/Blog-Post",
-    demo: "https://dabbal-tech-gazette.vercel.app/",
   },
+
   {
     title: "Social Media Website",
     description: "Social platform with profiles, posts, likes, and comments.",
@@ -145,6 +158,16 @@ const Projects: React.FC = () => {
                 >
                   View on GitHub
                 </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    className="inline-block mt-2 ml-4 text-green-500 hover:text-green-600 dark:text-green-400 dark:hover:text-green-500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo
+                  </a>
+                )}
               </div>
             </div>
           ))}
