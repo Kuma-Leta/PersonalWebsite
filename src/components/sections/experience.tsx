@@ -4,7 +4,7 @@ import AOS from "aos";
 
 const experience = [
   {
-    jobTitle: "Backend Developer Intern",
+    jobTitle: "Full-Stack Developer Intern",
     companyName: "Dabbal Software Development PLC",
     duration: "feb 2024 - present",
     description: [
@@ -28,6 +28,32 @@ const experience = [
       "Express.js",
     ],
     logo: "/dabbal.jpg",
+  },
+
+  {
+    jobTitle: "Backend Developer Intern",
+    companyName: "Marvels Creative Technology",
+    duration: "Jan 2024 - Mar 2024",
+    description: [
+      "Collaborated in building scalable backend APIs for web-based applications.",
+      "Worked on designing RESTful APIs and integrating them with frontend components.",
+      "Participated in sprint planning and team stand-ups as part of an agile workflow.",
+      "Performed unit testing and assisted in bug tracking and fixing.",
+    ],
+    achievements: [
+      "Successfully contributed to real-world client projects under tight deadlines.",
+      "Improved code quality and readability by refactoring existing backend modules.",
+    ],
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Git",
+      "Postman",
+      "JavaScript",
+      "REST API",
+    ],
+    logo: "/marvels.jpg", // You can replace this with the actual logo path
   },
 ];
 
