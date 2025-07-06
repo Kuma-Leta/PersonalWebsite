@@ -27,33 +27,37 @@ const experience = [
       "React",
       "Express.js",
     ],
-    logo: "/dabbal.jpg",
+    logoLight: "/dabbal.jpg",
+    logoDark: "/dabbal.jpg",
   },
 
   {
     jobTitle: "Backend Developer Intern",
     companyName: "Marvels Creative Technology",
-    duration: "Jan 2024 - Mar 2024",
+    duration: "Feb 2024 - present",
     description: [
-      "Collaborated in building scalable backend APIs for web-based applications.",
-      "Worked on designing RESTful APIs and integrating them with frontend components.",
-      "Participated in sprint planning and team stand-ups as part of an agile workflow.",
-      "Performed unit testing and assisted in bug tracking and fixing.",
+      "Contributed to the development of the Marvel Job Portal by building scalable backend APIs.",
+      "Designed and implemented RESTful APIs to support job listings, user authentication, and application workflows.",
+      "Integrated backend services with frontend components in a collaborative team environment.",
+      "Participated in agile ceremonies including sprint planning and daily stand-ups.",
+      "Wrote unit tests and helped identify and fix bugs to improve system reliability.",
     ],
+
     achievements: [
       "Successfully contributed to real-world client projects under tight deadlines.",
       "Improved code quality and readability by refactoring existing backend modules.",
     ],
     technologies: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
+      "MySQL",
       "Git",
       "Postman",
-      "JavaScript",
+      "Next.js",
+      "TypeScript",
       "REST API",
     ],
-    logo: "/marvels.jpg", // You can replace this with the actual logo path
+    logoDark: "/marvels.webp", // You can replace this with the actual logo path
+    logoLight: "/marvelsLight.webp", // You can replace this with the actual logo path
+    // logoLight: "/marvelsLight.webp",
   },
 ];
 
@@ -86,12 +90,19 @@ const Experience: React.FC = () => {
               data-aos="slide-up"
               data-aos-delay={index * 100}
             >
-              <div className="md:w-1/3 flex justify-center">
-                <img
-                  src={exp.logo}
-                  alt={`${exp.companyName} logo`}
-                  className="w-48 h-48 object-contain"
-                />
+              <div className="md:w-1/3 bg-black p-3  dark:bg-transparent flex justify-center">
+                <>
+                  <img
+                    src={exp.logoLight}
+                    alt={`${exp.companyName} logo light`}
+                    className="w-48 h-48 object-contain dark:hidden "
+                  />
+                  <img
+                    src={exp.logoDark}
+                    alt={`${exp.companyName} logo dark`}
+                    className="w-48 h-48  object-contain hidden dark:block"
+                  />
+                </>
               </div>
               <div className="md:w-2/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                 <h3 className="text-xl font-semibold mb-2">{exp.jobTitle}</h3>
