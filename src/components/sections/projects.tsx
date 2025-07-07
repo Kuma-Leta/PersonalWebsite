@@ -65,15 +65,10 @@ const projects = [
     github: "https://github.com/Kuma-Leta/note_taking_web_app",
   },
   {
-    title: "Ethio Agri Farming System",
+    title: "TaskFlow task management system",
     description:
-      "Supports farmers with weather updates, advisory services, and local language .",
-    images: [
-      "ethio_agri_home.jpg",
-      "ethio_agri_login.jpg",
-      "ethio_agri_landing_page.jpg",
-      "ethio_agri_register.jpg",
-    ],
+      "Supports farmers with weather updates, advisory services, and local language.",
+    images: ["dashboard.jpg"],
     github: "https://github.com/Kuma-Leta/Ethio-Agri-farming-system",
   },
 ];
