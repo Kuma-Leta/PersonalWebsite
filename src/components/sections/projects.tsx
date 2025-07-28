@@ -67,7 +67,7 @@ const projects = [
   {
     title: "TaskFlow task management system",
     description:
-      "Supports farmers with weather updates, advisory services, and local language.",
+      "A simple and intuitive task management system that helps users create, track, and organize tasks efficiently with priority and deadline support Designed for productivity and ease of use across teams or individuals",
     images: ["dashboard.jpg"],
     github: "https://github.com/Kuma-Leta/Task-management-system",
     demo: "https://taskflowmanage.netlify.app",
