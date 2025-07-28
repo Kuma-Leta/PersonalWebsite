@@ -29,7 +29,14 @@ const projects = [
     github: "https://github.com/Kuma-Leta/Blog-Post",
     demo: "https://blog-peach-three-24.vercel.app/",
   },
-
+  {
+    title: "TaskFlow task management system",
+    description:
+      "A simple and intuitive task management system that helps users create, track, and organize tasks efficiently with priority and deadline support Designed for productivity and ease of use across teams or individuals",
+    images: ["dashboard.jpg"],
+    github: "https://github.com/Kuma-Leta/Task-management-system",
+    demo: "https://taskflowmanage.netlify.app",
+  },
   {
     title: "Social Media Website",
     description: "Social platform with profiles, posts, likes, and comments.",
@@ -64,14 +71,6 @@ const projects = [
       "note_taking_add_notes.jpg",
     ],
     github: "https://github.com/Kuma-Leta/note_taking_web_app",
-  },
-  {
-    title: "TaskFlow task management system",
-    description:
-      "A simple and intuitive task management system that helps users create, track, and organize tasks efficiently with priority and deadline support Designed for productivity and ease of use across teams or individuals",
-    images: ["dashboard.jpg"],
-    github: "https://github.com/Kuma-Leta/Task-management-system",
-    demo: "https://taskflowmanage.netlify.app",
   },
 ];
 
