@@ -69,7 +69,8 @@ const projects = [
     description:
       "Supports farmers with weather updates, advisory services, and local language.",
     images: ["dashboard.jpg"],
-    github: "https://github.com/Kuma-Leta/Ethio-Agri-farming-system",
+    github: "https://github.com/Kuma-Leta/Task-management-system",
+    demo: "https://taskflowmanage.netlify.app",
   },
 ];
 
