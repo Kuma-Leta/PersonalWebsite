@@ -27,6 +27,7 @@ const projects = [
       "debbal_tech_gazette_profile.jpg",
     ],
     github: "https://github.com/Kuma-Leta/Blog-Post",
+    demo: "https://blog-peach-three-24.vercel.app/",
   },
 
   {
