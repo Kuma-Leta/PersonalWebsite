@@ -55,6 +55,7 @@ const projects = [
       "blog_authorProfile.jpg",
     ],
     github: "https://github.com/Kuma-Leta/simple-social-media-website",
+    demo:"https://sobervenues.netlify.app/"
   },
   {
     title: "Web-Based Brokerage System",
