@@ -19,7 +19,7 @@ const About: React.FC = () => {
             About Me
           </h2>
           <p className="mt-4 font-serif text-gray-700 text-lg text-justify dark:text-gray-300">
-            Hello! I’m Kuma Leta Keba, a passionate software engineering with a
+            Hello! I’m Kuma Leta Keba, a passionate software engineer with a
             strong foundation in full-stack web development. With over 3 years
             of experience through internships and personal projects, I
             specialize in creating efficient, scalable web applications and
