@@ -43,6 +43,7 @@ const projects = [
       " Developed a web-based platform that allows users to discover, browse, and contribute sober-friendly venues (e.g., cafes, restaurants, event spaces). ",
     images: ["sober1.jpg"],
     github: "https://github.com/Kuma-Leta/note_taking_web_app",
+    demo: "https://sobervenues.netlify.app/",
   },
   {
     title: "Social Media Website",
@@ -55,7 +56,6 @@ const projects = [
       "blog_authorProfile.jpg",
     ],
     github: "https://github.com/Kuma-Leta/simple-social-media-website",
-    demo:"https://sobervenues.netlify.app/"
   },
   {
     title: "Web-Based Brokerage System",
