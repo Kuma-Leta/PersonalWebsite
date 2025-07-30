@@ -38,6 +38,13 @@ const projects = [
     demo: "https://taskflowmanage.netlify.app",
   },
   {
+    title: "Sober Friendly Venues",
+    description:
+      " Developed a web-based platform that allows users to discover, browse, and contribute sober-friendly venues (e.g., cafes, restaurants, event spaces). ",
+    images: ["sober1.jpg"],
+    github: "https://github.com/Kuma-Leta/note_taking_web_app",
+  },
+  {
     title: "Social Media Website",
     description: "Social platform with profiles, posts, likes, and comments.",
     images: [
@@ -60,17 +67,6 @@ const projects = [
       "brokerage_admin_dashboard.jpg",
     ],
     github: "https://github.com/Kuma-Leta/Web-Based-Brokerage-System",
-  },
-  {
-    title: "Note-Taking Web App",
-    description: "Web app for creating, editing, and managing personal notes.",
-    images: [
-      "note_taking_home.jpg",
-      "note_taking_login.jpg",
-      "note_taking_edit_notes.jpg",
-      "note_taking_add_notes.jpg",
-    ],
-    github: "https://github.com/Kuma-Leta/note_taking_web_app",
   },
 ];
 
