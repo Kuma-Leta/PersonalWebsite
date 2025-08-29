@@ -76,7 +76,7 @@ const Certifications: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 py-16 px-6 md:px-12">
+    <section className="dark:bg-gray-900 py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <h2
           className="text-4xl font-bold text-center text-gray-800 dark:text-gray-200 mb-4"

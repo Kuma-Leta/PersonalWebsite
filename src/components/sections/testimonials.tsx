@@ -45,7 +45,7 @@ const Testimonials: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-gray-100 font-serif dark:bg-gray-900 dark:text-white  py-12">
+    <section className=" font-serif dark:bg-gray-900 dark:text-white  py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6 text-center" data-aos="fade-up">
           Testimonials

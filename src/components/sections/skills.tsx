@@ -33,42 +33,50 @@ const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="bg-gray-100 font-serif dark:bg-gray-900 dark:text-white py-12"
+      className="bg-gray-50 dark:bg-gray-900 py-20 font-sans"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 lg:px-12">
+        {/* Section Heading */}
         <h2
-          className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-white"
+          className="text-4xl md:text-5xl font-extrabold text-center text-[#2C2C2C] dark:text-white mb-6"
           data-aos="fade-up"
         >
           Technologies & Tools I Work With
         </h2>
         <p
-          className="text-center text-lg text-gray-600 dark:text-black-300 mb-12 dark:text-white"
+          className="text-center text-lg text-gray-700 dark:text-gray-300 mb-16 max-w-2xl mx-auto leading-relaxed"
           data-aos="fade-up"
         >
           Here are the technologies and tools I use to build scalable,
           efficient, and user-friendly solutions.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {Object.entries(skills).map(([category, items], index) => (
             <div
               key={category}
-              data-aos="slide-up"
-              data-aos-delay={index * 100}
-              className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md"
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2"
             >
-              <h3 className="text-xl font-semibold mb-4 capitalize text-gray-700 dark:text-gray-200">
+              <h3 className="text-2xl font-bold text-[#FF7A00] mb-6 capitalize text-center">
                 {category}
               </h3>
-              <div className="flex flex-wrap gap-6 justify-center">
+              <div className="flex flex-wrap justify-center gap-6">
                 {items.map((skill, idx) => (
-                  <div key={idx} className="flex flex-col items-center">
-                    <img
-                      src={skill.logo}
-                      alt={skill.name}
-                      className="w-20 h-20 object-contain mb-2"
-                    />
-                    <p className="text-sm text-gray-700 dark:text-gray-200">
+                  <div
+                    key={idx}
+                    className="flex flex-col items-center transition transform hover:scale-105"
+                  >
+                    <div className="w-20 h-20 flex items-center justify-center bg-[#FF7A00]/10 rounded-full shadow-md hover:shadow-orange-300/50 p-3">
+                      <img
+                        src={skill.logo}
+                        alt={skill.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <p className="mt-2 text-gray-800 dark:text-gray-200 font-medium">
                       {skill.name}
                     </p>
                   </div>
