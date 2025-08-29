@@ -6,7 +6,7 @@ const experience = [
   {
     jobTitle: "Full-Stack Developer Intern",
     companyName: "Dabbal Software Development PLC",
-    duration: "feb 2024 - present",
+    duration: "Feb 2024 - Present",
     description: [
       "Designed schema and implemented backend logic for scalable applications.",
       "Integrated databases using MongoDB, ensuring efficient data retrieval and security.",
@@ -30,11 +30,10 @@ const experience = [
     logoLight: "/dabbal.jpg",
     logoDark: "/dabbal.jpg",
   },
-
   {
     jobTitle: "Backend Developer Intern",
     companyName: "Marvels Creative Technology",
-    duration: "Feb 2024 - present",
+    duration: "Feb 2024 - Present",
     description: [
       "Contributed to the development of the Marvel Job Portal by building scalable backend APIs.",
       "Designed and implemented RESTful APIs to support job listings, user authentication, and application workflows.",
@@ -42,7 +41,6 @@ const experience = [
       "Participated in agile ceremonies including sprint planning and daily stand-ups.",
       "Wrote unit tests and helped identify and fix bugs to improve system reliability.",
     ],
-
     achievements: [
       "Successfully contributed to real-world client projects under tight deadlines.",
       "Improved code quality and readability by refactoring existing backend modules.",
@@ -55,9 +53,8 @@ const experience = [
       "TypeScript",
       "REST API",
     ],
-    logoDark: "/marvels.webp", // You can replace this with the actual logo path
-    logoLight: "/marvelsLight.webp", // You can replace this with the actual logo path
-    // logoLight: "/marvelsLight.webp",
+    logoDark: "/marvels.webp",
+    logoLight: "/marvelsLight.webp",
   },
 ];
 
@@ -69,73 +66,95 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className=" font-serif dark:bg-gray-900 dark:text-white py-12"
+      className="bg-gray-50 dark:bg-gray-900 py-20 font-sans"
     >
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-center" data-aos="fade-up">
+      <div className="container mx-auto px-6 lg:px-12">
+        {/* Section Header */}
+        <h2
+          className="text-4xl md:text-5xl font-extrabold text-center text-[#2C2C2C] dark:text-white mb-6"
+          data-aos="fade-up"
+        >
           Experience
         </h2>
         <p
-          className="text-center text-lg text-gray-600 dark:text-gray-300 mb-12"
+          className="text-center text-lg text-gray-700 dark:text-gray-300 mb-16 max-w-2xl mx-auto leading-relaxed"
           data-aos="fade-up"
         >
           Discover the roles I've taken on, the challenges I've tackled, and the
           technologies I've mastered.
         </p>
+
+        {/* Experience Timeline */}
         <div className="relative">
-          {experience.map((exp, index) => (
-            <div
-              key={index}
-              className="flex flex-col md:flex-row items-center gap-6 mb-12"
-              data-aos="slide-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="md:w-1/3 bg-black p-3  dark:bg-transparent flex justify-center">
-                <>
+          {experience.map((exp, index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <div
+                key={index}
+                className={`flex flex-col md:flex-row items-center mb-16 gap-6 ${
+                  isLeft ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
+              >
+                {/* Company Logo */}
+                <div className="md:w-1/3  flex justify-center">
                   <img
                     src={exp.logoLight}
-                    alt={`${exp.companyName} logo light`}
-                    className="w-48 h-48 object-contain dark:hidden "
+                    alt={`${exp.companyName} logo`}
+                    className="w-48 h-48 bg-black object-contain dark:hidden rounded-full shadow-md"
                   />
                   <img
                     src={exp.logoDark}
-                    alt={`${exp.companyName} logo dark`}
-                    className="w-48 h-48  object-contain hidden dark:block"
+                    alt={`${exp.companyName} logo`}
+                    className="w-48 h-48 object-contain hidden dark:block rounded-full shadow-md"
                   />
-                </>
-              </div>
-              <div className="md:w-2/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-                <h3 className="text-xl font-semibold mb-2">{exp.jobTitle}</h3>
-                <p className="text-gray-700 dark:text-gray-300">
-                  <strong>{exp.companyName}</strong> | {exp.duration}
-                </p>
-                <ul className="list-disc pl-5 text-gray-600 dark:text-white opacity-0.8 mt-4">
-                  {exp.description.map((desc, idx) => (
-                    <li key={idx}>{desc}</li>
-                  ))}
-                </ul>
-                <h4 className="text-lg font-semibold mt-4">Key Achievements</h4>
-                <ul className="list-disc pl-5 text-gray-600 dark:text-white mt-2">
-                  {exp.achievements.map((achieve, idx) => (
-                    <li key={idx}>{achieve}</li>
-                  ))}
-                </ul>
-                <h4 className="text-lg  font-semibold mt-4">
-                  Technologies Used
-                </h4>
-                <div className="flex flex-wrap gap-3 mt-2">
-                  {exp.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-primary dark:text-white text-black rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                </div>
+
+                {/* Experience Card */}
+                <div className="md:w-2/3 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2">
+                  <h3 className="text-2xl font-bold text-[#FF7A00]">
+                    {exp.jobTitle}
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300 mt-1">
+                    <strong>{exp.companyName}</strong> | {exp.duration}
+                  </p>
+
+                  {/* Description */}
+                  <ul className="list-disc pl-5 mt-4 text-gray-600 dark:text-gray-200 space-y-2">
+                    {exp.description.map((desc, idx) => (
+                      <li key={idx}>{desc}</li>
+                    ))}
+                  </ul>
+
+                  {/* Achievements */}
+                  <h4 className="text-lg dark:text-white font-semibold mt-6">
+                    Key Achievements
+                  </h4>
+                  <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-200 space-y-1">
+                    {exp.achievements.map((achieve, idx) => (
+                      <li key={idx}>{achieve}</li>
+                    ))}
+                  </ul>
+
+                  {/* Technologies */}
+                  <h4 className="text-lg dark:text-white font-semibold mt-6">
+                    Technologies Used
+                  </h4>
+                  <div className="flex flex-wrap gap-3 mt-2">
+                    {exp.technologies.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-[#FF7A00]/20 text-[#2C2C2C] dark:text-white rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
