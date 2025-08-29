@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import Aos from "aos";
-import { useState } from "react";
+
 const projects = [
   {
-    title: "online Donation Platform through NGOs",
+    title: "Online Donation Platform through NGOs",
     description:
-      "Blogging platform with user authentication, content creation, and commenting features.",
+      "A secure donation platform connecting donors with NGOs, featuring authentication and real-time donation tracking.",
     images: [
       "donation1.jpg",
       "donation2.jpg",
@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Dabbal Tech Gazette",
     description:
-      "Blogging platform with user authentication, content creation, and commenting features.",
+      "A modern blogging platform with admin dashboard, profile management, and content creation tools.",
     images: [
       "debbal_tech_gazette__post.jpg",
       "debbal_tech_gazette_admin_dashboard.jpg",
@@ -30,9 +30,9 @@ const projects = [
     demo: "https://blog-peach-three-24.vercel.app/",
   },
   {
-    title: "TaskFlow task management system",
+    title: "TaskFlow – Task Management System",
     description:
-      "A simple and intuitive task management system that helps users create, track, and organize tasks efficiently with priority and deadline support Designed for productivity and ease of use across teams or individuals",
+      "An intuitive task management system with deadlines, priorities, and team collaboration features.",
     images: ["dashboard.jpg"],
     github: "https://github.com/Kuma-Leta/Task-management-system",
     demo: "https://taskflowmanage.netlify.app",
@@ -40,14 +40,15 @@ const projects = [
   {
     title: "Sober Friendly Venues",
     description:
-      " Developed a web-based platform that allows users to discover, browse, and contribute sober-friendly venues (e.g., cafes, restaurants, event spaces). ",
+      "A community-driven platform to discover and share sober-friendly venues such as cafes, restaurants, and events.",
     images: ["sober1.jpg"],
     github: "https://github.com/Kuma-Leta/note_taking_web_app",
     demo: "https://sobervenues.netlify.app/",
   },
   {
     title: "Social Media Website",
-    description: "Social platform with profiles, posts, likes, and comments.",
+    description:
+      "A social platform with profiles, posts, likes, and real-time chat functionality.",
     images: [
       "blog_landingPage.jpg",
       "blog_login.jpg",
@@ -60,7 +61,7 @@ const projects = [
   {
     title: "Web-Based Brokerage System",
     description:
-      "Property posting system with registration and admin dashboard.",
+      "Property posting system with registration, user dashboard, and admin analytics.",
     images: [
       "brokerage_home.jpg",
       "brokerage_login.jpg",
@@ -75,9 +76,11 @@ const Projects: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number[]>(
     projects.map(() => 0)
   );
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
+
   const handlePrev = (projectIndex: number) => {
     setCurrentImageIndex((prev) =>
       prev.map((index, idx) =>
@@ -101,74 +104,92 @@ const Projects: React.FC = () => {
       )
     );
   };
+
   return (
-    <section
-      className="bg-gray-100 font-serif dark:bg-gray-900 py-16"
-      id="projects"
-    >
+    <section className=" dark:bg-gray-900 py-20 font-sans" id="projects">
       <div className="container mx-auto px-6 lg:px-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-12">
+        {/* Section Heading */}
+        <h2
+          className="text-4xl md:text-5xl font-extrabold text-center text-[#2C2C2C] dark:text-white mb-16"
+          data-aos="fade-up"
+        >
           My Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
-              data-aos="slide-up"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
             >
+              {/* Image Carousel */}
               <div className="relative">
                 <img
                   src={project.images[currentImageIndex[index]]}
                   alt={`${project.title} screenshot`}
-                  className="w-full h-40 object-cover"
+                  className="w-full h-48 object-cover rounded-t-2xl"
                 />
-                <button
-                  onClick={() => handlePrev(index)}
-                  className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white px-2 py-1 rounded-lg hover:bg-gray-700"
-                >
-                  &lt;
-                </button>
-                <button
-                  onClick={() => handleNext(index)}
-                  className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white px-2 py-1 rounded-lg hover:bg-gray-700"
-                >
-                  &gt;
-                </button>
+                {project.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => handlePrev(index)}
+                      className="absolute top-1/2 left-3 transform -translate-y-1/2 bg-[#2C2C2C]/80 text-white p-2 rounded-full hover:bg-[#FF7A00] transition"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      onClick={() => handleNext(index)}
+                      className="absolute top-1/2 right-3 transform -translate-y-1/2 bg-[#2C2C2C]/80 text-white p-2 rounded-full hover:bg-[#FF7A00] transition"
+                    >
+                      ›
+                    </button>
+                  </>
+                )}
               </div>
+
+              {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold text-[#2C2C2C] dark:text-white">
                   {project.title}
                 </h3>
-                <p className="text-sm text-gray-700 text-base  dark:text-gray-300 mt-2">
+                <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                   {project.description}
                 </p>
-                <a
-                  href={project.github}
-                  className="inline-block mt-4 text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View on GitHub
-                </a>
-                {project.demo && (
+
+                {/* Links */}
+                <div className="mt-5 flex space-x-4">
                   <a
-                    href={project.demo}
-                    className="inline-block mt-2 ml-4 text-green-500 hover:text-green-600 dark:text-green-400 dark:hover:text-green-500"
+                    href={project.github}
+                    className="px-4 py-2 bg-[#2C2C2C] text-white rounded-xl text-sm font-medium hover:bg-[#FF7A00] transition"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live Demo
+                    GitHub
                   </a>
-                )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      className="px-4 py-2 bg-[#FF7A00] text-white rounded-xl text-sm font-medium hover:bg-[#e86c00] transition"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="mt-12 text-center">
+
+        {/* More Projects CTA */}
+        <div className="mt-16 text-center">
           <a
             href="https://github.com/Kuma-Leta?tab=repositories"
-            className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition"
+            className="px-8 py-3 bg-[#FF7A00] text-white text-base font-semibold rounded-2xl shadow-lg hover:bg-[#e86c00] hover:shadow-orange-300/50 transition"
             target="_blank"
             rel="noopener noreferrer"
           >
