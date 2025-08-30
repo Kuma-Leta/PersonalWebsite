@@ -60,6 +60,7 @@ interface Certificate {
   description: string;
   organization: string;
 }
+
 const Certifications: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
@@ -76,28 +77,30 @@ const Certifications: React.FC = () => {
   };
 
   return (
-    <section className="dark:bg-gray-900 py-16 px-6 md:px-12">
+    <section className="dark:bg-gray-900 py-20 px-6 md:px-12 font-sans">
       <div className="max-w-7xl mx-auto">
+        {/* Section Title */}
         <h2
-          className="text-4xl font-bold text-center text-gray-800 dark:text-gray-200 mb-4"
+          className="text-4xl md:text-5xl font-extrabold text-center text-[#FF7A00] mb-6"
           data-aos="fade-up"
         >
           Certifications
         </h2>
         <p
-          className="text-center text-lg text-gray-600 dark:text-gray-400 mb-12"
+          className="text-center text-lg text-gray-600 dark:text-gray-400 mb-14 max-w-3xl mx-auto"
           data-aos="fade-up"
         >
           A collection of credentials I've earned in areas such as backend
           development, virtual assistance, and AI.
         </p>
 
+        {/* Grid of Certificates */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {certifications.map((cert, idx) => (
             <div
               key={idx}
               onClick={() => openModal(cert)}
-              className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transform transition duration-300 cursor-pointer"
+              className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:shadow-[#FF7A00]/40 transform hover:-translate-y-2 transition duration-300 cursor-pointer"
               data-aos="zoom-in-up"
               data-aos-delay={idx * 100}
             >
@@ -107,13 +110,13 @@ const Certifications: React.FC = () => {
                 className="h-48 w-full object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
                   {cert.title}
                 </h3>
-                <p className="text-sm text-indigo-500 dark:text-indigo-300 font-medium mb-2">
+                <p className="text-sm uppercase tracking-wide text-[#FF7A00] font-semibold mb-3">
                   {cert.organization}
                 </p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                   {cert.description}
                 </p>
               </div>
@@ -121,12 +124,13 @@ const Certifications: React.FC = () => {
           ))}
         </div>
 
+        {/* View More Button */}
         <div className="mt-16 text-center">
           <a
             href="https://drive.google.com/drive/u/0/folders/1zfU5A_Hdf7kU0eoj2OLQTAq4XVLgRrSK"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition"
+            className="inline-block px-8 py-3 bg-[#FF7A00] text-white font-semibold rounded-full hover:bg-orange-600 transition"
           >
             View More Certificates
           </a>
@@ -135,33 +139,33 @@ const Certifications: React.FC = () => {
 
       {/* Modal */}
       {selectedCert && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex justify-center items-center px-4">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg max-w-lg w-full p-6 relative">
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex justify-center items-center px-4">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg max-w-xl w-full p-6 relative animate-fadeIn">
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-600 dark:text-gray-300 text-2xl hover:text-red-500"
+              className="absolute top-4 right-4 text-gray-600 dark:text-gray-300 text-2xl hover:text-[#FF7A00]"
             >
               &times;
             </button>
             <img
               src={selectedCert.image}
               alt={selectedCert.title}
-              className="w-full h-60 object-cover rounded-md mb-4"
+              className="w-full h-64 object-cover rounded-lg mb-4"
             />
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">
               {selectedCert.title}
             </h3>
-            <p className="text-sm text-indigo-500 dark:text-indigo-300 mb-2">
+            <p className="text-sm text-[#FF7A00] uppercase font-medium mb-2">
               {selectedCert.organization}
             </p>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               {selectedCert.description}
             </p>
             <a
               href={selectedCert.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+              className="inline-block px-5 py-2 bg-[#FF7A00] text-white rounded-full hover:bg-orange-600 transition"
             >
               Verify Credential
             </a>
