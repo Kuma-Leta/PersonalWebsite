@@ -52,10 +52,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="font-serif bg-gray-50 dark:bg-gray-900 py-16 px-6"
-    >
+    <section id="contact" className="font-serif  dark:bg-gray-900 py-16 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-center text-gray-800 dark:text-gray-200 mb-4">
