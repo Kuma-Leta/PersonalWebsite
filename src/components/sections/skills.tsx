@@ -17,6 +17,7 @@ const skills = {
     { name: "Express", logo: "/express.png" },
     { name: "MongoDB", logo: "/mongo.png" },
     { name: "Nextjs", logo: "/nextjs.png" },
+    { name: "MySQL", logo: "/mysql.png" },
   ],
   tools: [
     { name: "Git", logo: "/git.png" },
